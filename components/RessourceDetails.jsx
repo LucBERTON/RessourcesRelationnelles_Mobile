@@ -3,24 +3,22 @@ import React from 'react'
 
 export default function RessourceDetails({route, navigation}) {
 
-
     let ressource = route.params.ressource
-
+    console.log(ressource)
 
   return (
     <View style={styles.container}>
             <View>
-                    <Text style={styles.txt}>Titre: {ressource.title} </Text>
+                    <Text style={styles.txt}>{ressource.title} </Text>
                     <Text style={styles.txt}>Auteur : {ressource.author} </Text>
-                    <Text style={styles.txt}>Date de soumission : {ressource.submitDate} </Text>
-                    <Text style={styles.txt}>Contenu :</Text>
+                    <Text style={styles.txt}>{ressource.submitDate} </Text>
                     <Text style={styles.txt}> {ressource.content} </Text>
                 </View>
             <View style={[styles.main, styles.liste]}>
-                Commentaires : 
+                <Text>Commentaires :</Text>
 
                 {ressource.comments.map((comment, index) => {
-                    return <Text key={index}>{comment.content}</Text>
+                    return <Text key={index}>{comment}</Text>
                 })}
             </View>
 

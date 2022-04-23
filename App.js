@@ -7,6 +7,7 @@ import ListRessources from './components/ListRessources';
 import RessourceDetails from './components/RessourceDetails';
 import { getData, TOKEN_KEY, Token_KEY, USER_KEY } from './service/StorageService';
 import Login from './components/login/Login';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Stack = createNativeStackNavigator()
 
@@ -46,7 +47,9 @@ export default function App() {
     setToken(tokenStorage)
   }, [])
   return (
+    
     <NavigationContainer>
+     
       <UserContext.Provider value={contextValue}>
         <Stack.Navigator>
           {
@@ -75,15 +78,22 @@ export default function App() {
           
         </Stack.Navigator>
       </UserContext.Provider>
+
     </NavigationContainer>
+    
   );
 }
 
 const styles = StyleSheet.create({
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
+  },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
