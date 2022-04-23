@@ -38,7 +38,7 @@ export default function ListRessources( {navigation}) {
                 style={styles.view}
                 onPress={() => navigation.navigate('ressourceDetails', {ressource: item})}>
                 <View>
-                    <Text style={styles.txt}>Titre: {item.title} </Text>
+                    <Text style={[styles.txt, styles.title]}>Titre: {item.title} </Text>
                     <Text style={styles.txt}>Auteur : {item.author} </Text>
                     <Text style={styles.txt}>Date de soumission : {item.submitDate} </Text>
                 </View>
@@ -68,9 +68,13 @@ const styles = StyleSheet.create({
     view: {
         flexDirection: 'row',
         padding: 10,
+        backgroundColor: "blue"
     },
     txt: {
         marginLeft: 20,
         paddingTop: 10
+    },
+    title:{
+        fontSize: 30
     }
 });
