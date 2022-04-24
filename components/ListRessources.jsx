@@ -1,7 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, SafeAreaView, FlatList } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import React from 'react'
 import { TouchableOpacity } from 'react-native-web';
 
@@ -29,16 +26,17 @@ export default function ListRessources( {navigation}) {
 
 
 
-      
+    
 
-
+    
     const renduListRessources = ({ item }) => {
         return (
             <TouchableOpacity
-                style={styles.view}
+                style={[styles.view, styles.card]}
                 onPress={() => navigation.navigate('ressourceDetails', {ressource: item})}>
                 <View>
-                    <Text style={styles.txt}>Titre: {item.title} </Text>
+                    <Text style={[styles.txt, styles.title]}>Titre: {item.title} </Text>
+                    <Image source={{uri: item.imageUrl}} style={styles.img}/>
                     <Text style={styles.txt}>Auteur : {item.author} </Text>
                     <Text style={styles.txt}>Date de soumission : {item.submitDate} </Text>
                 </View>
@@ -62,15 +60,28 @@ export default function ListRessources( {navigation}) {
 
 const styles = StyleSheet.create({
     img: {
-        width: 50,
-        height: 50
+        width: 300,
+        height: 300,
+        marginBottom:20,
+        marginTop: 20,
+        marginLeft: 50,
     },
     view: {
         flexDirection: 'row',
         padding: 10,
+       
+    },
+    card: {
+        borderBottomWidth: 1,
+        borderColor: 'blue',
+        marginTop: 50,
+        marginBottom: 50
     },
     txt: {
         marginLeft: 20,
         paddingTop: 10
+    },
+    title:{
+        fontSize: 30
     }
 });
