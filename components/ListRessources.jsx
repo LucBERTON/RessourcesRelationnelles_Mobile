@@ -37,7 +37,7 @@ export default function ListRessources( {navigation}) {
             <TouchableOpacity
                 style={styles.view}
                 onPress={() => navigation.navigate('ressourceDetails', {ressource: item})}>
-                <View  style={[styles.box]}>
+                <View  style={[flex: 1, styles.box]}>
                     <Text style={styles.txt}>Titre: {item.title} </Text>
                     <Text style={styles.txt}>Auteur : {item.author} </Text>
                     <Text style={styles.txt}>Date de soumission : {item.submitDate} </Text>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     },
     box: {
         borderWidth: 1,
-        borderRadius: 30,
+        borderRadius: 10,
     },
     txt: {
         marginLeft: 20,
